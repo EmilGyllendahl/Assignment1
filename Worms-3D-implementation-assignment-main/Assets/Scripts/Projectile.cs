@@ -8,15 +8,16 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private GameObject damageIndicatorPrefab;
     private bool isActive;
+    public float m_Lifespan = 3f; // this is the projectile's lifespan (in seconds)
 
-    public void Initialize()
+    public void Initialize(Vector3 direction)
     {
         isActive = true;
 
         // -------- This method is for projectiles that have a parabole. ----------
         // We add a force only once, not every frame
         // Make sure to have "useGravity" toggled on in the rigid body
-        projectileBody.AddForce(transform.forward * 700f + transform.up * 300f);
+        projectileBody.AddForce(direction);
     }
 
     void Update()
@@ -29,7 +30,7 @@ public class Projectile : MonoBehaviour
 
             // Use either the following line (movement with the rigid body)
 
-            projectileBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+           // projectileBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
            
             // or this one (movement with the transform), both are ok
            // transform.Translate(transform.forward * speed * Time.deltaTime);
@@ -41,4 +42,6 @@ public class Projectile : MonoBehaviour
         GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
         damageIndicator.transform.position = collision.GetContact(0).point;
     }
+
+
 }
