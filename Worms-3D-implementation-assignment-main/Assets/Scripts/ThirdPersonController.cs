@@ -58,4 +58,4 @@ public class ThirdPersonController : MonoBehaviour
         characterCamera.transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
         transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f); // we dont want to make the camera go up and down
     }
-}5§
+}
