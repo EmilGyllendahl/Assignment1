@@ -10,15 +10,20 @@ public class CharacterWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             bool IsPlayerTurn = playerTurn.IsPlayerTurn();
             if (IsPlayerTurn)
             {
-                TurnManager.GetInstance().TriggerChangeTurn();
-                GameObject newProjectile = Instantiate(projectilePrefab);
-                newProjectile.transform.position = shootingStartPosition.position;
-                newProjectile.GetComponent<Projectile>().Initialize();
+                Vector3 force = transform.forward * 700f +  transform.up * 300f;
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    TurnManager.GetInstance().TriggerChangeTurn();
+                    GameObject newProjectile = Instantiate(projectilePrefab);
+                    newProjectile.transform.position = shootingStartPosition.position;
+                    newProjectile.GetComponent<Projectile>().Initialize(force);
+                }
             }
         }
     }
