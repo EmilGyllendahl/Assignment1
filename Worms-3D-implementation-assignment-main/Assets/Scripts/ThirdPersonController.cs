@@ -9,6 +9,8 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private float speedV = 2.0f;
     [SerializeField] private float walkingSpeed = 2f;
     [SerializeField] private Rigidbody characterBody;
+    [SerializeField] private PlayerTurn playerTurn;
+
 
     private float yaw = 0.0f; // Angle values decribing values
     private float pitch = 0.0f;
@@ -18,7 +20,7 @@ public class ThirdPersonController : MonoBehaviour
     private void Jump()
     {
 
-        characterBody.AddForce(Vector3.up * 300f); // The characters rigidbody is shot up by the vector3.up value and float value
+        characterBody.AddForce(Vector3.up * 500f); // The characters rigidbody is shot up by the vector3.up value and float value
     }
 
    
@@ -29,23 +31,28 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (playerTurn.IsPlayerTurn())
         {
-            Jump();
-        }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
 
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            transform.Translate(transform.right * walkingSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), Space.World); // Interpreted to the world space with the rotation according to the game world space
-        }
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                transform.Translate(transform.right * walkingSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), Space.World); // Interpreted to the world space with the rotation according to the game world space
+            }
 
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            transform.Translate(transform.forward * walkingSpeed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
-        }
+            if (Input.GetAxis("Vertical") != 0)
+            {
+                transform.Translate(transform.forward * walkingSpeed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
+            }
 
-        ReadRotationInput();
+           
+
+            ReadRotationInput();
+
+        }
 
     }
 
