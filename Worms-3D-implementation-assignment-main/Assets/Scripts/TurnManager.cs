@@ -59,6 +59,7 @@ public class TurnManager : MonoBehaviour
         waitingForNextTurn = true;
     }
 
+
     private void ChangeTurn()
     {
         if (currentPlayerIndex == 1)
