@@ -8,16 +8,15 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private GameObject damageIndicatorPrefab;
     private bool isActive;
-    public float m_Lifespan = 3f; // this is the projectile's lifespan (in seconds)
+    
 
     public void Initialize(Vector3 direction)
     {
         isActive = true;
-
         // -------- This method is for projectiles that have a parabole. ----------
         // We add a force only once, not every frame
         // Make sure to have "useGravity" toggled on in the rigid body
-        projectileBody.AddForce(direction);
+        projectileBody.AddForce(direction, ForceMode.VelocityChange);
     }
 
     void Update()
