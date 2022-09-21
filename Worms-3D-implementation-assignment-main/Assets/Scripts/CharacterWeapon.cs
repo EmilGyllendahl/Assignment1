@@ -7,7 +7,7 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
-
+    [SerializeField] private float Bulletspeed;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -15,14 +15,13 @@ public class CharacterWeapon : MonoBehaviour
             bool IsPlayerTurn = playerTurn.IsPlayerTurn();
             if (IsPlayerTurn)
             {
-                Vector3 force = transform.forward * 700f +  transform.up * 300f;
-
-                if (Input.GetKeyDown(KeyCode.F))
+                Vector3 force = transform.forward * Bulletspeed;
+                              
                 {
                     TurnManager.GetInstance().TriggerChangeTurn();
-                    GameObject newProjectile = Instantiate(projectilePrefab);
-                    newProjectile.transform.position = shootingStartPosition.position;
-                    newProjectile.GetComponent<Projectile>().Initialize(force);
+                    GameObject newProjectile = Instantiate(projectilePrefab, shootingStartPosition.position, shootingStartPosition.rotation);
+                    
+                    newProjectile.GetComponentInChildren<Projectile>().Initialize(force); // (force)
                 }
             }
         }
