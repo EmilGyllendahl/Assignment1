@@ -10,8 +10,7 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         GameObject.Find("Bullet");
-        GameObject.Find("Player 1");
-        GameObject.Find("Player 2");
+        
     }
 
     // Update is called once per frame
@@ -22,9 +21,15 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) // This function is called whenever something enters the enemy´s collider.
     {
-        if(collision.gameObject.name == "Bullet")
+        if(collision.gameObject.tag == "Bullet")
+        //.gameObject.name == "Bullet") GetContact(0).point
         {
-            playerHealth.TakeDamage(damage); // Talks to the PlayerHealth scripts/ and then to the TakeDamage function, health will subtract by 1 each hit.
-        }
+
+            playerHealth.TakeDamage(damage); // Talks to the PlayerHealth scripts/ an hit.d then to the TakeDamage function, health will subtract by 1 each
+
+           
+        } 
     }
+
+
 }

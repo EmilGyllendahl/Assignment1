@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4789358579511419489}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,16 +44,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8495599799677013367, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8495599799677013367, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
     - target: {fileID: -8495599799677013367, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8495599799677013367, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2611283567597624600, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611283567597624600, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611283567597624600, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: damageIndicatorPrefab
+      value: 
+      objectReference: {fileID: 4913611329227438977, guid: f96e032cd2558ec40b5c3507f94c1b3f, type: 3}
     - target: {fileID: 2624870654149735852, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8420655993574235671, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_Name
@@ -119,7 +139,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8385571942028525194, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
 --- !u!4 &6779996503453907921 stripped
 Transform:
