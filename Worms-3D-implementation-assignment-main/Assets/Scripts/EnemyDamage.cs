@@ -10,6 +10,8 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         GameObject.Find("Bullet");
+        GameObject.Find("Player 1");
+        GameObject.Find("Player 2");
     }
 
     // Update is called once per frame
