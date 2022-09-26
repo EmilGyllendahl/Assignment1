@@ -16,6 +16,8 @@ public class TurnManager : MonoBehaviour
     private bool waitingForNextTurn;
     private float turnDelay;
 
+    
+
     private void Awake()
     {
         if (instance == null)
@@ -71,14 +73,14 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 2; // Set it to player 2.
             cam1.SetActive(false);
             cam2.SetActive(true);
-          
+           
         }
         else if (currentPlayerIndex == 2)
         {
             currentPlayerIndex = 1;
             cam1.SetActive(true); // Camera 1 is set to be active and used when the currentPlayerInded is 1.
             cam2.SetActive(false);
-
+           
         }
     }
 }

@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
+                Debug.Log("Syns detta meddelande?");
                 Jump();
             }
         }
