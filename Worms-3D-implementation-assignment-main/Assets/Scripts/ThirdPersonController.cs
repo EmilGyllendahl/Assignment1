@@ -13,7 +13,7 @@ public class ThirdPersonController : MonoBehaviour
 
 
     //Rigidbody rb;
-    //bool canJump;
+    bool canJump;
 
 
     private float yaw = 0.0f; // Angle values decribing values
@@ -30,7 +30,7 @@ public class ThirdPersonController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
+    */
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Jumpable")
@@ -47,7 +47,7 @@ public class ThirdPersonController : MonoBehaviour
         }
     }
 
-    */
+    
    
     private void Start()
     {
@@ -57,7 +57,7 @@ public class ThirdPersonController : MonoBehaviour
     private void Jump()
     {
 
-        characterBody.AddForce(Vector3.up * 500f); // The characters rigidbody is shot up by the vector3.up value and float value
+        characterBody.AddForce(Vector3.up * 300f); // The characters rigidbody is shot up by the vector3.up value and float value
     }
 
     void Update()
@@ -72,7 +72,7 @@ public class ThirdPersonController : MonoBehaviour
                }
             */
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) & canJump)
             {
                 Jump();
             }
