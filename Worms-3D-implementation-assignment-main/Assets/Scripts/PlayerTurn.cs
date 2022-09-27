@@ -8,11 +8,11 @@ public class PlayerTurn : MonoBehaviour
 
     public void SetPlayerTurn(int index)
     {
-        playerIndex = index;
+        playerIndex = index; // fetches the playerindex
     }
 
-    public bool IsPlayerTurn()
+    public bool IsPlayerTurn() // and if it is the players turn
     {
-        return TurnManager.GetInstance().IsItPlayerTurn(playerIndex);
+        return TurnManager.GetInstance().IsItPlayerTurn(playerIndex); // return it to the Turnmanager with the index in the public bool.
     }
 }

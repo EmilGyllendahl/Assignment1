@@ -28,6 +28,7 @@ public class TurnManager : MonoBehaviour
             playerTwo.SetPlayerTurn(2);
             cam1.SetActive(true); // Makes it so cam1 is allways set to activate at first when awaking the scene and focusing on teh player it is attached to
             cam2.SetActive(false);
+
         }
     }
 
@@ -82,5 +83,7 @@ public class TurnManager : MonoBehaviour
             cam2.SetActive(false);
            
         }
+
+        
     }
 }

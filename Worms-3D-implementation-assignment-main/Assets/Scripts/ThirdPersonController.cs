@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThirdPersonController : MonoBehaviour
 {
@@ -10,28 +11,17 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private float walkingSpeed = 2f;
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private Rigidbody characterBody;
+    [SerializeField] private float pitchClamp = 90; // Creates a limit for the camera movement so it doesen't rotate around the character 180 degres
 
 
-    //Rigidbody rb;
     bool canJump;
 
 
     private float yaw = 0.0f; // Angle values decribing values
     private float pitch = 0.0f;
 
-    // public float jumpheight = 50f;
-
-    [SerializeField] private float pitchClamp = 90; // Creates a limit for the camera movement so it doesen't rotate around the character 180 degres
-
-    
-
-    /*
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-    */
-    private void OnCollisionEnter(Collision other)
+  
+    private void OnCollisionEnter(Collision other) // On collisionEnter with the plane or other objects with the tag of "Jumpable" enable the jump input.
     {
         if (other.gameObject.tag == "Jumpable")
         {
@@ -39,7 +29,7 @@ public class ThirdPersonController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnCollisionExit(Collision other) // When the players are not on the plane or another object with the tag of "Jumpable" disabel the jump input
     {
         if (other.gameObject.tag == "Jumpable")
         {
@@ -51,7 +41,7 @@ public class ThirdPersonController : MonoBehaviour
    
     private void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = false; // Disables the mouse pointer in the game mode.
     }
 
     private void Jump()
@@ -64,17 +54,11 @@ public class ThirdPersonController : MonoBehaviour
     {
         if (playerTurn.IsPlayerTurn())
         {
-            // Jumping Script. Player can jump only when canJump is true (means when the player is on the floor)
-            /*   if (Input.GetKey(KeyCode.Space) & canJump)
-               {
-                   Debug.Log("Går inputen igenom?");
-                   rb.AddForce(0f, jumpheight * Time.deltaTime, 0f);
-               }
-            */
+          
 
-            if (Input.GetKeyDown(KeyCode.Space) & canJump)
+            if (Input.GetKeyDown(KeyCode.Space) & canJump) // If the input is space and fulfills canJump requirement enable jump while on that specific player turn.
             {
-                Jump();
+                Jump(); // shoots up the rigidbody with a value of 300 float.
             }
             if (Input.GetAxis("Horizontal") != 0)
             {
@@ -85,8 +69,6 @@ public class ThirdPersonController : MonoBehaviour
             {
                 transform.Translate(transform.forward * walkingSpeed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
             }
-
-           
 
             ReadRotationInput();
 

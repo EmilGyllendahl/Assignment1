@@ -25,11 +25,11 @@ public class EnemyDamage : MonoBehaviour
         //.gameObject.name == "Bullet") GetContact(0).point
         {
 
-            playerHealth.TakeDamage(damage); // Talks to the PlayerHealth scripts/ an hit.d then to the TakeDamage function, health will subtract by 1 each
-
+            playerHealth.TakeDamage(damage); // Talks to the PlayerHealth scripts/ an hit.d then to the TakeDamage function, health will subtract by each hit
+           
            
         } 
     }
 
-
+   
 }

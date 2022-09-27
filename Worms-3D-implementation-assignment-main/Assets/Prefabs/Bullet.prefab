@@ -57,27 +57,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8495599799677013367, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2611283567597624600, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: speed
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2611283567597624600, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2611283567597624600, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: damageIndicatorPrefab
       value: 
       objectReference: {fileID: 4913611329227438977, guid: f96e032cd2558ec40b5c3507f94c1b3f, type: 3}
     - target: {fileID: 2624870654149735852, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624870654149735852, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8420655993574235671, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420655993574235671, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8420655993574235671, guid: 8354cef9824e90a44a25f2fa7a4a973d, type: 3}
       propertyPath: m_TagString
