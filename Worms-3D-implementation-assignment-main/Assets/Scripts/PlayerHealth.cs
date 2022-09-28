@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health; // Keeps track of the players current health
     public int maxHealth = 10; // How much health you have when you are at full health
-
+    [SerializeField] private GameObject Canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,12 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {                           // If the damage takes the player down to zero or below the the player will be destoyed
             Destroy(gameObject);
+            Canvas.SetActive(true);
         }
+
+      
+
     }
+
+    
 }
