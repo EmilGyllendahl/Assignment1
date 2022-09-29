@@ -40,11 +40,7 @@ public class ThirdPersonController : MonoBehaviour
 
     
    
-    private void Start()
-    {
-        Cursor.visible = false; // Disables the mouse pointer in the game mode.
-    }
-
+ 
     private void Jump()
     {
 
