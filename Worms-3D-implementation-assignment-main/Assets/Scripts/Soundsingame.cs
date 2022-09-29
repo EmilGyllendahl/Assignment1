@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RobotSounds : MonoBehaviour
+public class Soundsingame : MonoBehaviour
 {
-    private static RobotSounds instance;
+    private static Soundsingame instance;
 
     [SerializeField] private AudioSource audioSource; // Enables the audio from the audio source component.
     [SerializeField] private AudioClip jumpingFX; // AudioClip is not the audio clip, it is a parameter chosen in the inspector/Robot sounds clip.
+    [SerializeField] private AudioClip shootinggun;
+    [SerializeField] private AudioClip playermovement;
 
-   
-
-    public RobotSounds GetInstance()
+    public Soundsingame GetInstance()
     {
         return instance;
     }
@@ -29,7 +29,14 @@ public class RobotSounds : MonoBehaviour
             audioSource.PlayOneShot(jumpingFX);
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            audioSource.PlayOneShot(shootinggun);
+        }
+
+        
     
    }
    
 }
+

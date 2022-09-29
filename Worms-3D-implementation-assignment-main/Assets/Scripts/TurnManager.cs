@@ -11,8 +11,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private float timeBetweenTurns;
     [SerializeField] private GameObject cam1;
     [SerializeField] private GameObject cam2;
-    [SerializeField]private GameObject Background;
-    [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject Background;
+    [SerializeField] private GameObject healthbar;
+    [SerializeField] private GameObject Healtbar2;
+
     private int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
@@ -30,7 +32,7 @@ public class TurnManager : MonoBehaviour
             cam1.SetActive(true); // Makes it so cam1 is allways set to activate at first when awaking the scene and focusing on teh player it is attached to
             cam2.SetActive(false);
             Background.SetActive(false); // Makes it so the canvas is not shown att awake in players turn. Ii is set to false.
-            healthBar.SetActive(true);
+       
         }
     }
 
@@ -41,7 +43,7 @@ public class TurnManager : MonoBehaviour
             turnDelay += Time.deltaTime;
             if (turnDelay >= timeBetweenTurns)
             {
-                turnDelay = 0; // The timer between turns.
+                turnDelay = 5; // The timer between turns.
                 waitingForNextTurn = false;
                 ChangeTurn();
             }
@@ -76,14 +78,16 @@ public class TurnManager : MonoBehaviour
             currentPlayerIndex = 2; // Set it to player 2.
             cam1.SetActive(false);
             cam2.SetActive(true);
-           
+            healthbar.SetActive(false);
+            Healtbar2.SetActive(true);
         }
         else if (currentPlayerIndex == 2)
         {
             currentPlayerIndex = 1;
             cam1.SetActive(true); // Camera 1 is set to be active and used when the currentPlayerInded is 1.
             cam2.SetActive(false);
-           
+            healthbar.SetActive(true);
+            Healtbar2.SetActive(false);
         }
 
         

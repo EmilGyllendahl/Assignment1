@@ -13,7 +13,8 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private Rigidbody characterBody;
     [SerializeField] private float pitchClamp = 90; // Creates a limit for the camera movement so it doesen't rotate around the character 180 degres
 
-
+   
+   
     bool canJump;
 
 
@@ -84,5 +85,6 @@ public class ThirdPersonController : MonoBehaviour
 
         characterCamera.transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
         transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f); // we dont want to make the camera go up and down
+        
     }
 }

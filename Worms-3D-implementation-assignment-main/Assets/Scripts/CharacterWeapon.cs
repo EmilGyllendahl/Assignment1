@@ -9,9 +9,10 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private Transform shootingStartPosition;
     [SerializeField] private float Bulletspeed;
     [SerializeField] private float Bulletlife; // The lenght of the life of the bullet.
+    [SerializeField] private bool onimpact;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             bool IsPlayerTurn = playerTurn.IsPlayerTurn();
             if (IsPlayerTurn)
@@ -25,6 +26,9 @@ public class CharacterWeapon : MonoBehaviour
                     
                     newProjectile.GetComponentInChildren<Projectile>().Initialize(force); // (force)
                     Destroy(newProjectile, Bulletlife);
+
+                 
+                   
                 }
 
             }
