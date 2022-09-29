@@ -9432,7 +9432,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fcafdf7acc26fb646a61af647d4be31f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -21087,13 +21087,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4a57636a4cc64f6c822a6bd1aec36e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.12
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 151
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -21631,6 +21631,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 6
+  Background: {fileID: 0}
+  UihealthBar: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!195 &1859957358
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -21688,6 +21691,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8610727983376496262, guid: dce146bb7aec7664e8fe3d22a2c82b24, type: 3}
   shootingStartPosition: {fileID: 1266915679}
   Bulletspeed: 5
+  Bulletlife: 0
+  onimpact: 0
 --- !u!1001 &1868271251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22046,7 +22051,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fcafdf7acc26fb646a61af647d4be31f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
