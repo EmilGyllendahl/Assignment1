@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+
+
 public class MainMenu : MonoBehaviour
 {
 
-   private float waituntilstart = 5;
+
    public void ExitButton()
     {
         Application.Quit();

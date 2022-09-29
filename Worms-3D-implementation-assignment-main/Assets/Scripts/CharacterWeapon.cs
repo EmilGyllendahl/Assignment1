@@ -8,7 +8,7 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
     [SerializeField] private float Bulletspeed;
-    [SerializeField] private float Bulletlife;
+    [SerializeField] private float Bulletlife; // The lenght of the life of the bullet.
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
